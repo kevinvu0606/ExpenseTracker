@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from 'react'
 import { Transaction } from './Transaction'
-
 import { GlobalContext } from '../../context/GlobalState'
+import { List as MUIList, Typography } from '@material-ui/core';
+import useStyles from './styles'
 
 
 export const TransactionList = () => {
 
   const { transactions, getTransactions } = useContext(GlobalContext);
+  const classes = useStyles();
 
   useEffect(() => {
     getTransactions();
@@ -18,10 +20,10 @@ export const TransactionList = () => {
   // transaction is being passed through as a prop
   return (
     <>
-      <h3>Transaction History</h3>
-      <ul className="list">
+      <Typography align="center" variant="h5">Transaction History</Typography>
+      <MUIList dense={false}>
         {transactions.map(transaction => (<Transaction key={transaction._id} transaction={transaction} />))}
-      </ul>
+      </MUIList>
     </>
   )
 }

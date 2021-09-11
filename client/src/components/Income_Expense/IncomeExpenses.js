@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
-
+import { Grid } from '@material-ui/core'
 
 export const IncomeExpenses = () => {
   const { transactions } = useContext(GlobalContext)
@@ -23,15 +23,18 @@ export const IncomeExpenses = () => {
   }
 
   return (
-    <div className="inc-exp-container">
-      <div>
-        <h4>Income</h4>
-        <p className="money plus">{addCommas(income)}</p>
-      </div>
-      <div>
+    <Grid container spacing={0} alignItems="center" justify="space-between">
+      <Grid item xs={12} sm={3}>
+        <div>
+          <h4>Income</h4>
+          <p className="money plus">$ {addCommas(income)}</p>
+        </div>
+      </Grid>
+      <Grid item xs={12} sm={3}>
         <h4>Expenses</h4>
-        <p className="money minus">{addCommas(expenses)}</p>
-      </div>
-    </div>
+        <p className="money minus">$ {addCommas(expenses)}</p>
+      </Grid>
+
+    </Grid >
   )
 }

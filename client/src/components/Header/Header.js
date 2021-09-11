@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { CardContent, Typography } from '@material-ui/core';
 export const Header = () => {
   return (
-    <h2>
-      Expense tracking
-    </h2>
+    <CardContent>
+      <Typography align="center" variant="h4">Expense Tracker</Typography>
+    </CardContent>
   )
 
 }
