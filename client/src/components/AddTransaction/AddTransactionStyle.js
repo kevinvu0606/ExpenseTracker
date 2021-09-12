@@ -26,7 +26,11 @@ export default makeStyles((theme) => ({
 
   centerHelper: {
     textAlign: "center"
-  }
+  },
+
+  listItemText: {
+    fontSize: '19px',//Insert your required size
+  },
 
 }))
 

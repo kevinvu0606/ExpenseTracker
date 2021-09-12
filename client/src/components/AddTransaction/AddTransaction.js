@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState'
-import { Typography, TextField, InputAdornment, Input } from '@material-ui/core'
+import { Typography, TextField, InputAdornment, MenuItem } from '@material-ui/core'
 import useStyles from './AddTransactionStyle';
 import { MonetizationOn } from '@material-ui/icons'
 
@@ -10,6 +10,31 @@ export const AddTransaction = () => {
   const [amount, setAmount] = useState('')
   const { addTransaction } = useContext(GlobalContext)
   const classes = useStyles()
+
+
+  const categories = [
+    { type: 'Business' },
+    { type: 'Investments' },
+    { type: 'Extra income' },
+    { type: 'Deposits' },
+    { type: 'Lottery' },
+    { type: 'Gifts' },
+    { type: 'Salary' },
+    { type: 'Savings' },
+    { type: 'Rental income' },
+    { type: 'Bills' },
+    { type: 'Car' },
+    { type: 'Clothes' },
+    { type: 'Travel' },
+    { type: 'Food' },
+    { type: 'Shopping' },
+    { type: 'House' },
+    { type: 'Entertainment' },
+    { type: 'Phone' },
+    { type: 'Pets' },
+    { type: 'Other' },
+  ]
+
 
 
   function handleChangeNumbers(event) {
@@ -40,7 +65,8 @@ export const AddTransaction = () => {
       <div>
         <form onSubmit={onSubmit}>
           <div className="form-control">
-            <Typography align="center" variant="h6">Enter Details</Typography>
+            {/* form for if i want custom inputs */}
+            {/* <Typography align="center" variant="h6">Enter Details</Typography>
             <TextField
               value={text}
               onChange={(event) => setText(event.target.value)}
@@ -56,9 +82,40 @@ export const AddTransaction = () => {
                 style: { textAlign: 'center', fontSize: 20 },
               }
               }
+            /> */}
 
-            />
+            <Typography align="center" variant="h6">Enter Details</Typography>
+            <TextField
+              value={text}
+              onChange={(event) => setText(event.target.value)}
+              color="secondary"
+              select
+              margin='normal'
+              required='true'
+              size='small'
+              variant='filled'
+              fullWidth='true'
+              className={classes.textField}
+              inputProps={{
+                style: { textAlign: 'center', fontSize: 30 },
+              }
+              }
+            >
+              {categories.map((option) => (
+                <MenuItem
+                  key={option.type}
+                  value={option.type}
+                  className={classes.listItemText}>
+                  {option.type}
+                </MenuItem>))}
+            </TextField>
           </div>
+
+
+
+
+
+
           <div className="form-control">
             <Typography align="center" variant="h6">Enter Amount: </Typography>
 

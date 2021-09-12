@@ -1,4 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components'
+
 
 export default makeStyles((theme) => ({
   desktop: {
