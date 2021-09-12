@@ -12,6 +12,12 @@ export const AddTransaction = () => {
   const classes = useStyles()
 
 
+  function handleChangeNumbers(event) {
+    const onlyNums = event.target.value;
+    setAmount(onlyNums)
+  }
+
+
   const onSubmit = event => {
     event.preventDefault();
     // can use uuid for random id 
@@ -59,9 +65,10 @@ export const AddTransaction = () => {
             <TextField
               multiline={false}
               autofocus
+              type='number'
               placeholder='0.00'
               value={amount}
-              onChange={(event) => setAmount(event.target.value)}
+              onChange={handleChangeNumbers}
               color='secondary'
               InputProps={{
                 startAdornment: (
@@ -80,7 +87,16 @@ export const AddTransaction = () => {
                   fontSize: 25,
                 }
               }}
-              helperText="Postiive for income, Negative for expenses"
+              helperText={
+                <Typography
+                  variant="caption"
+                  className={classes.centerHelper}
+                  display="block"
+                >
+                  Positive for Income |  Negative for Expenses
+                </Typography>
+
+              }
 
             />
           </div>

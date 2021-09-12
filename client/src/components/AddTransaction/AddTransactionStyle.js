@@ -24,6 +24,9 @@ export default makeStyles((theme) => ({
     marginLeft: "40%"
   },
 
+  centerHelper: {
+    textAlign: "center"
+  }
 
 }))
 
