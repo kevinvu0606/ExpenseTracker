@@ -3,7 +3,7 @@ import { CardContent, Typography } from '@material-ui/core';
 export const Header = () => {
   return (
     <CardContent>
-      <Typography align="center" variant="h4">Expense Tracker</Typography>
+      <Typography align="center" variant="h3">Expense Tracker</Typography>
     </CardContent>
   )
 

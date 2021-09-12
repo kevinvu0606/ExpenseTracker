@@ -25,7 +25,7 @@ export const GraphIncome = ({ title }) => {
       graphObject[incomeObject[property]['text']] += incomeObject[property]['amount']
     }
   }
-
+  // let itemCount = Object.keys(graphObject).length
 
   let labelIncome = []
   for (const property in graphObject) {
@@ -74,7 +74,7 @@ export const GraphIncome = ({ title }) => {
 
   return (
     <Card className={title === "Income" ? classes.income : classes.expense}>
-      <CardHeader title={title} />
+      <CardHeader title={title} align="center" />
       <CardContent>
         <Typography variant='h5'>${Math.abs(totalIncome)}</Typography>
         <Doughnut data={data} />

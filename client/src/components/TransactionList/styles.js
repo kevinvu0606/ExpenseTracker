@@ -14,7 +14,4 @@ export default makeStyles((theme) => ({
     maxHeight: '150px',
     overflow: 'auto',
   },
-  listItem: {
-    backgroundColor: "LightGray",
-  }
 }));

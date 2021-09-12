@@ -23,7 +23,7 @@ export const Transaction = ({ transaction }) => {
             <LocalAtm />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={transaction.text} secondary={`${sign} $ ${Math.abs(transaction.amount)} - ${transaction.createdAt.split('T')[0]}`} />
+        <ListItemText primary={transaction.text} secondary={`${sign} $${Math.abs(transaction.amount)} - ${transaction.createdAt.split('T')[0]}`} />
         <ListItemSecondaryAction>
           <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction._id)}>
             <DeleteForever />

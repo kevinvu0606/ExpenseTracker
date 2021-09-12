@@ -21,7 +21,7 @@ export const TransactionList = () => {
   return (
     <>
       <Typography align="center" variant="h5">Transaction History</Typography>
-      <MUIList dense={false}>
+      <MUIList dense={false} className={classes.list}>
         {transactions.map(transaction => (<Transaction key={transaction._id} transaction={transaction} />))}
       </MUIList>
     </>

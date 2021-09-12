@@ -76,7 +76,7 @@ export const GraphExpense = ({ title }) => {
 
   return (
     <Card className={title === "Income" ? classes.income : classes.expense}>
-      <CardHeader title={title} />
+      <CardHeader title={title} align="center" />
       <CardContent>
         <Typography variant='h5'> $ {Math.abs(totalExpense)}</Typography>
         <Doughnut data={data} />
