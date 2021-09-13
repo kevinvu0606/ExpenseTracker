@@ -7,4 +7,7 @@ export default makeStyles(() => ({
   expense: {
     borderBottom: '10px solid rgba(255, 0, 0, 0.5)',
   },
+  incomeExpense: {
+    borderBottom: '10px solid rgba(0,0,255, 0.5 )',
+  }
 }));

@@ -5,8 +5,10 @@ import { TransactionList } from './components/TransactionList/TransactionList'
 import { AddTransaction } from './components/AddTransaction/AddTransaction'
 import { GraphIncome } from './components/Graphs/GraphIncome'
 import { GraphExpense } from './components/Graphs/GraphExpense'
+import { GraphIncomeExpense } from './components/Graphs/GraphIncomeExpense'
+import { BarGraph } from './components/Graphs/BarGraph'
 import { GlobalProvider } from './context/GlobalState'
-import { Grid, Card, Divider, CardHeader, CardContent } from '@material-ui/core';
+import { Grid, Card, Divider, CardContent } from '@material-ui/core';
 import useStyles from './styles';
 
 import './App.css';
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <GlobalProvider >
-      <Grid className={classes.grid} container spacing={9} alignItems="center" justify="center" style={{ height: '100vh' }}>
+      <Grid className={classes.grid} container spacing={0} alignItems="center" justifyContent="center" style={{ height: '80vh' }}>
         <Grid item xs={11} sm={3} >
           <GraphIncome title="Income" />
         </Grid>
@@ -39,8 +41,14 @@ function App() {
         <Grid item xs={11} sm={3} >
           <GraphExpense title="Expenses" />
         </Grid>
+        <Grid className={classes.LineGraph} item xs={11} sm={5} style={{ height: '50vh' }} >
+          <GraphIncomeExpense />
+        </Grid>
+        <Grid item xs={11} sm={5} style={{ height: '50vh' }}>
+          <BarGraph />
+        </Grid>
       </Grid>
-    </GlobalProvider>
+    </GlobalProvider >
   );
 }
 

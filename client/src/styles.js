@@ -32,4 +32,15 @@ export default makeStyles((theme) => ({
   divider: {
     background: "blue",
   },
+
+  expenseIncomeGraphContainer: {
+    display: "flex",
+    flexDirection: "row",
+    '& > *': {
+      margin: theme.spacing(2),
+    },
+  },
+
+
+
 }));
