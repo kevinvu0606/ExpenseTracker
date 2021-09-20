@@ -78,7 +78,6 @@ export const GraphIncome = ({ title }) => {
       <CardContent>
         <Typography variant='h5'>${Math.abs(totalIncome)}</Typography>
         <Doughnut data={data} />
-        {console.log(incomeObject)}
       </CardContent>
     </Card>
   )

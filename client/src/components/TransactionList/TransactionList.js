@@ -14,7 +14,6 @@ export const TransactionList = () => {
     getTransactions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(transactions)
   // [] empty array to prevent infinite loop 
   // the map: we are mapping through the list of transactions, and passing them through to the Transaction component which then lists them out.
   // transaction is being passed through as a prop

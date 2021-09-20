@@ -23,7 +23,6 @@ export const Balance = () => {
           {sign} $ {addCommas(Math.abs(currentBalance))}
         </Typography>
       </CardContent>
-      {console.log(currentBalance)}
     </>
   )
 }

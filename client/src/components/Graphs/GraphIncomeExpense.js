@@ -38,6 +38,10 @@ export const GraphIncomeExpense = ({ title }) => {
     incomeData.push(graphObject[property])
   }
 
+  for (let i = 0; i < labelIncome.length; i++) {
+    labelIncome[i] = labelIncome[i].split('T')[0]
+  }
+
 
   let totalIncome = 0
   for (var i = 0; i < incomeData.length; i++) {
@@ -128,7 +132,7 @@ export const GraphIncomeExpense = ({ title }) => {
               }]
             }
           }} />
-        {console.log(graphObjectExpense)}
+        {console.log(graphObject)}
       </CardContent>
     </Card>
   )

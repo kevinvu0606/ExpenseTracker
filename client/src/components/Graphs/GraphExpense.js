@@ -80,7 +80,6 @@ export const GraphExpense = ({ title }) => {
       <CardContent>
         <Typography variant='h5'> $ {Math.abs(totalExpense)}</Typography>
         <Doughnut data={data} />
-        {console.log(transactions)}
       </CardContent>
     </Card>
   )
