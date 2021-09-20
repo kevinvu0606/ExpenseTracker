@@ -5,6 +5,7 @@ const colors = require('colors');
 const morgan = require('morgan');
 // morgan for logging
 const connectDB = require('./config/db');
+const path = require('path');
 
 dotenv.config({ path: './config/config.env' });
 
@@ -15,11 +16,18 @@ const transactions = require('./routes/transactions')
 const app = express()
 
 app.use(express.json());
+app.use(express.static('./client/build'))
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 
 }
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+})
+
+
 
 app.use('/api/v1/transactions', transactions)
 
